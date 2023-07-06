@@ -97,7 +97,7 @@ namespace T11
         }
 
         // Excute SQL SELECT 
-        public SqlDataReader SQLQuery(string str)
+        public List<Employee> SQLQuery(string str)
         // ('Select', 'Table name', Condition Field1, Val1, Condition Field2, Val2,.....)        
         {
             SqlConnection cnn = new(config.conStr);
@@ -130,8 +130,19 @@ namespace T11
                 cmd = new(sql, cnn);
             }
             SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read()) 
+            { 
+                Employee emp = new Employee();
+                emp.Id = (int)rdr["Id"];
+                emp.Name = (string)rdr["Name"];
+                emp.Password = (string)rdr["Password"];
+                emp.Role = (string)rdr["Role"];
+                emp.Username = (string)rdr["Username"];
+                emp.Position = (string)rdr["Position"];
+                result.Add(emp);
+            }
             cnn.Close();
-            return rdr;
+            return result;
         }
 
     }

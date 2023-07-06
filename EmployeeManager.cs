@@ -16,18 +16,8 @@ namespace T11
         public void GetData() 
         { 
             Config config = new Config();
-            SqlDataReader rdr = new SQLUtils().SQLQuery("Select,Employees");
-            int i = 0;
-            while (rdr.Read()) 
-            {
-                employees[i].Id = (int) rdr["id"];
-                employees[i].Name = (string) rdr["name"];
-                employees[i].Password = (string) rdr["Password"];
-                employees[i].Role = (string) rdr["Role"];
-                employees[i].Username = (string) rdr["Username"];
-                employees[i].Position = (string) rdr["Position"];
-                i++;
-            }
+            employees = new SQLUtils().SQLQuery("Select,Employees");       
+            
         }
 
         public void Add(Employee emp) 

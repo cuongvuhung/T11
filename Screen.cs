@@ -209,7 +209,7 @@ namespace T11
                 if (list.Count > 0)
                 {
                     foreach (Employee ei in list)
-                        Console.WriteLine(ei.ToString());
+                        Console.WriteLine(ei.ToStringExport());
                 }
                 else
                 {
@@ -225,7 +225,7 @@ namespace T11
                 if (list.Count > 0)
                 {
                     foreach (Employee ei in list)
-                        Console.WriteLine(ei.ToString());
+                        Console.WriteLine(ei.ToStringExport());
                 }
                 else
                 {
@@ -241,7 +241,7 @@ namespace T11
                 if (list.Count > 0)
                 {
                     foreach (Employee ei in list)
-                        Console.WriteLine(ei.ToString());
+                        Console.WriteLine(ei.ToStringExport());
                 }
                 else
                 {
@@ -257,7 +257,7 @@ namespace T11
                 if (list.Count > 0)
                 {
                     foreach (Employee ei in list)
-                        Console.WriteLine(ei.ToString());
+                        Console.WriteLine(ei.ToStringExport());
                 }
                 else
                 {
